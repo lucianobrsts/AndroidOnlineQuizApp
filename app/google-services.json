@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "628705924016",
+    "firebase_url": "https://onlinequizapp-64b12.firebaseio.com",
+    "project_id": "onlinequizapp-64b12",
+    "storage_bucket": "onlinequizapp-64b12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628705924016:android:3477a3fba3727151",
+        "android_client_info": {
+          "package_name": "unit7.dev.androidonlinequizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628705924016-2pl4q5nb2241n3ejau5fkuf3luoas73g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
