@@ -1,6 +1,7 @@
 package unit7.dev.androidonlinequizapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -67,8 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.child(usuario).exists()) {
                     if(!usuario.isEmpty()) {
                         User login = dataSnapshot.child(usuario).getValue(User.class);
-                        if(login.getSenha().equals(senha))
-                            Toast.makeText(MainActivity.this, "Login feito com sucesso.", Toast.LENGTH_SHORT).show();
+                        if(login.getSenha().equals(senha)) {
+                            Intent homeActivity = new Intent(MainActivity.this, Home.class);
+                            startActivity(homeActivity);
+                            finish();
+                        }
                          else
                             Toast.makeText(MainActivity.this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
                         } else {
