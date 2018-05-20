@@ -15,18 +15,35 @@
       },
       "oauth_client": [
         {
+          "client_id": "628705924016-idb9pvobf5ooh3l5nsslhovstppkcjs4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "unit7.dev.androidonlinequizapp",
+            "certificate_hash": "2e09c59c7be6441762d9b9152a8300ed6f722baa"
+          }
+        },
+        {
           "client_id": "628705924016-2pl4q5nb2241n3ejau5fkuf3luoas73g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
-      "api_key": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6HaL0QdlupVqPeK8CcsFEOqV7J6k1a38"
+        }
+      ],
       "services": {
         "analytics_service": {
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628705924016-2pl4q5nb2241n3ejau5fkuf3luoas73g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

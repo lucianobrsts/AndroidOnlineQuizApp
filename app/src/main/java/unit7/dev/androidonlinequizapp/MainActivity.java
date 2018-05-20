@@ -1,9 +1,9 @@
 package unit7.dev.androidonlinequizapp;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +19,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import unit7.dev.androidonlinequizapp.Model.User;
 
 public class MainActivity extends AppCompatActivity {
-/*
+
     MaterialEditText edtNovoNome, edtNovaSenha, edtNovoEmail; // para o sign up
     MaterialEditText edtNome, edtSenha; // para o sign in
 
@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference usuarios;
-*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-  /*      //Firebase
+       //Firebase
         database = FirebaseDatabase.getInstance();
         usuarios = database.getReference("Usuarios");
 
@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 signIn(edtNome.getText().toString(), edtSenha.getText().toString());
             }
-        }); */
+        });
     }
 
-    /*
+
     private void signIn(final String usuario, final String senha) {
         usuarios.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -84,16 +84,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    */
 
-    /*
+
     private void showSignUpDialog() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setTitle("Sign Up");
         alertDialog.setMessage("Por favor preencha todas as informações.");
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View sign_up_layout = inflater.inflate(R.layout.sign_up_layout,null);
+        View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
 
         edtNovoNome = sign_up_layout.findViewById(R.id.edtNovoNome);
         edtNovoEmail = sign_up_layout.findViewById(R.id.edtNovoEmail);
@@ -137,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             }
     });
 
-        alertDialog.show();
+       alertDialog.show();
     }
-*/
 }
