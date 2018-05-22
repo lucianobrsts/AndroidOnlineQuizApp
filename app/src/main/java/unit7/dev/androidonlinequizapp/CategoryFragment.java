@@ -1,6 +1,7 @@
 package unit7.dev.androidonlinequizapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import unit7.dev.androidonlinequizapp.Common.Common;
 import unit7.dev.androidonlinequizapp.Interface.ItemClickListener;
 import unit7.dev.androidonlinequizapp.Model.Categoria;
 import unit7.dev.androidonlinequizapp.ViewHolder.CategoriaViewHolder;
@@ -79,8 +81,10 @@ public class CategoryFragment extends Fragment {
 
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
-
+                        //Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
+                        Intent startGame = new Intent(getActivity(),Start.class);
+                        Common.categoryId = adapter.getRef(position).getKey();
+                        startActivity(startGame);
                     }
                 });
             }

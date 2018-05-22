@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import unit7.dev.androidonlinequizapp.Common.Common;
 import unit7.dev.androidonlinequizapp.Model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         User login = dataSnapshot.child(usuario).getValue(User.class);
                         if(login.getSenha().equals(senha)) {
                             Intent homeActivity = new Intent(MainActivity.this, Home.class);
+                            Common.currentUser = login;
                             startActivity(homeActivity);
                             finish();
                         }
