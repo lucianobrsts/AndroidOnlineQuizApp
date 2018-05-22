@@ -1,6 +1,9 @@
 package unit7.dev.androidonlinequizapp;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +22,6 @@ import unit7.dev.androidonlinequizapp.Interface.ItemClickListener;
 import unit7.dev.androidonlinequizapp.Model.Categoria;
 import unit7.dev.androidonlinequizapp.ViewHolder.CategoriaViewHolder;
 
-
 public class CategoryFragment extends Fragment {
 
     View myFragment;
@@ -29,10 +31,9 @@ public class CategoryFragment extends Fragment {
     FirebaseRecyclerAdapter<Categoria, CategoriaViewHolder> adapter;
 
     FirebaseDatabase database;
-    DatabaseReference categorias;
+    DatabaseReference categories;
 
-
-    public static CategoryFragment newInstance() {
+    public static CategoryFragment newInstance(){
         CategoryFragment categoryFragment = new CategoryFragment();
         return categoryFragment;
     }
@@ -42,32 +43,31 @@ public class CategoryFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         database = FirebaseDatabase.getInstance();
-        categorias = database.getReference("Categoria");
+        categories = database.getReference("Category");
     }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        myFragment = inflater.inflate(R.layout.fragment_category, container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        myFragment = inflater.inflate(R.layout.fragment_category, container, false);
 
         listCategory = (RecyclerView) myFragment.findViewById(R.id.listCategory);
         listCategory.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(container.getContext());
         listCategory.setLayoutManager(layoutManager);
 
-        loadCategorias();
+        loadCategories();
 
         return myFragment;
     }
 
-    private void loadCategorias() {
+    private void loadCategories() {
         adapter = new FirebaseRecyclerAdapter<Categoria, CategoriaViewHolder>(
                 Categoria.class,
                 R.layout.categoria_layout,
                 CategoriaViewHolder.class,
-                categorias
+                categories
         ) {
-
             @Override
             protected void populateViewHolder(CategoriaViewHolder viewHolder, final Categoria model, int position) {
                 viewHolder.category_name.setText(model.getName());
@@ -76,9 +76,11 @@ public class CategoryFragment extends Fragment {
                         .into(viewHolder.category_image);
 
                 viewHolder.setItemClickListener(new ItemClickListener() {
+
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }

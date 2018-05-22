@@ -73,7 +73,7 @@
                 
                 <Button
                     android:id="@+id/botaoSignUp"
-                    android:text="Sign Up"
+                    android:text="Cadastre-se"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -81,7 +81,7 @@
 
                 <Button
                     android:id="@+id/botaoSignIn"
-                    android:text="Sign In"
+                    android:text="Login"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_weight="1"
                     android:layout_width="0dp"
