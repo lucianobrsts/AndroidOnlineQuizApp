@@ -20,7 +20,8 @@
         <activity android:name=".Home" />
         <activity android:name=".Start" />
         <activity android:name=".Playing" />
-        <activity android:name=".Done"></activity>
+        <activity android:name=".Done" />
+        <activity android:name=".ScoreDetail"></activity>
     </application>
 
 </manifest>

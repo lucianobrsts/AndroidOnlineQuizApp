@@ -1,6 +1,7 @@
 package unit7.dev.androidonlinequizapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -94,7 +95,7 @@ public class RankingFragment extends Fragment {
         ) {
 
             @Override
-            protected void populateViewHolder(RankingViewHolder viewHolder, Ranking model, int position) {
+            protected void populateViewHolder(RankingViewHolder viewHolder, final Ranking model, int position) {
 
                 viewHolder.txt_name.setText(model.getUserName());
                 viewHolder.txt_score.setText(String.valueOf(model.getScore()));
@@ -102,7 +103,9 @@ public class RankingFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-
+                        Intent scoreDetail = new Intent(getActivity(), ScoreDetail.class);
+                        scoreDetail.putExtra("viewUser", model.getUserName());
+                        startActivity(scoreDetail);
                     }
                 });
             }

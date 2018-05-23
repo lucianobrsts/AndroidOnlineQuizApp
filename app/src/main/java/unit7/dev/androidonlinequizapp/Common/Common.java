@@ -8,7 +8,7 @@ import unit7.dev.androidonlinequizapp.Model.User;
 
 public class Common {
 
-    public static String categoryId;
+    public static String categoryId, getCategoryName;
     public static User currentUser;
     public static List<Question> questionList = new ArrayList<>();
 }
