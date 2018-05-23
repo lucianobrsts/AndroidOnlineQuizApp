@@ -18,8 +18,8 @@ import unit7.dev.androidonlinequizapp.Common.Common;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener{
 
-    final static long INTERVAL = 2000; // 2 segundo
-    final static long TIMEOUT = 10000; // 10 segundos
+    final static long INTERVAL = 1000; // 1 segundo
+    final static long TIMEOUT = 15000; // 15 segundos
     int progressValue = 0;
 
     CountDownTimer mCountDown;
@@ -77,7 +77,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 Bundle dataSend = new Bundle();
                 dataSend.putInt("SCORE", score);
                 dataSend.putInt("TOTAL", totalQuestion);
-                dataSend.putInt("CORRECT", correctAnswer);
+                dataSend.putInt("CORRETAS", correctAnswer);
                 intent.putExtras(dataSend);
                 startActivity(intent);
                 finish();
@@ -125,7 +125,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE", score);
             dataSend.putInt("TOTAL", totalQuestion);
-            dataSend.putInt("CORRECT", correctAnswer);
+            dataSend.putInt("CORRETAS", correctAnswer);
             intent.putExtras(dataSend);
             startActivity(intent);
             finish();

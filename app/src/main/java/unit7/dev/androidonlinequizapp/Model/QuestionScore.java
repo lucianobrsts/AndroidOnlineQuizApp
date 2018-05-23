@@ -11,12 +11,12 @@ public class QuestionScore {
     public QuestionScore() {
     }
 
-    public QuestionScore(String question_Score, String user, String score, String categoryId, String CategoryName) {
+    public QuestionScore(String question_Score, String user, String score, String categoryId, String categoryName) {
         Question_Score = question_Score;
         User = user;
         Score = score;
         CategoryId = categoryId;
-        this.CategoryName = CategoryName;
+        CategoryName = categoryName;
     }
 
     public String getQuestion_Score() {

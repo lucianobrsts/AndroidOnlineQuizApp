@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                          else
                             Toast.makeText(MainActivity.this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(MainActivity.this, "Por favor digite seu nome de usuário.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Digite seu nome de usuário.", Toast.LENGTH_SHORT).show();
                         }
                     } else
                     Toast.makeText(MainActivity.this, "O usuário não existe.", Toast.LENGTH_SHORT).show();
@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSignUpDialog() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-        alertDialog.setTitle("Sign Up");
-        alertDialog.setMessage("Por favor preencha todas as informações.");
+        alertDialog.setTitle("Cadastro");
+        alertDialog.setMessage("Preencha todas as informações.");
 
         LayoutInflater inflater = this.getLayoutInflater();
         View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
@@ -105,14 +105,14 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setView(sign_up_layout);
         alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
 
-        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
             }
         });
 
-        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 final User user = new User(edtNovoNome.getText().toString(),

@@ -1,8 +1,7 @@
 package unit7.dev.androidonlinequizapp;
 
-import android.speech.RecognizerIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -41,7 +40,8 @@ public class ScoreDetail extends AppCompatActivity {
         
         if(getIntent() != null)
             viewUser = getIntent().getStringExtra("viewUser");
-        if(!viewUser.isEmpty())loadScoreDetail(viewUser);
+        if(!viewUser.isEmpty())
+            loadScoreDetail(viewUser);
     }
 
     private void loadScoreDetail(String viewUser) {
@@ -56,7 +56,6 @@ public class ScoreDetail extends AppCompatActivity {
 
                 viewHolder.txt_name.setText(model.getCategoryName());
                 viewHolder.txt_score.setText(model.getScore());
-
             }
         };
         adapter.notifyDataSetChanged();

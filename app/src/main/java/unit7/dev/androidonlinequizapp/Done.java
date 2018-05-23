@@ -53,7 +53,7 @@ public class Done extends AppCompatActivity {
             int correctAnswer = extra.getInt("CORRETAS");
 
             txtResultScore.setText(String.format("SCORE : %d", score));
-            getTxtResultQuestion.setText(String.format("ANTERIOR : %d / %d", correctAnswer, totalQuestion));
+            getTxtResultQuestion.setText(String.format("RESPONDEU : %d / %d", correctAnswer, totalQuestion));
 
             progressBar.setMax(totalQuestion);
             progressBar.setProgress(correctAnswer);
@@ -65,7 +65,8 @@ public class Done extends AppCompatActivity {
                             Common.categoryId),
                             Common.currentUser.getNome(),
                             String.valueOf(score),
-                            Common.categoryId, Common.getCategoryName));
+                            Common.categoryId,
+                            Common.categoryName));
         }
     }
 }

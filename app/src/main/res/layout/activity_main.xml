@@ -31,7 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:padding="16dp"
@@ -89,7 +90,7 @@
 
                 <Button
                     android:id="@+id/botaoSignIn"
-                    android:text="Login"
+                    android:text="Entrar"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_weight="1"
                     android:layout_width="0dp"

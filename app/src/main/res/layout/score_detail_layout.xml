@@ -5,7 +5,8 @@
     android:layout_height="70dp"
     android:padding="16dp"
     android:layout_margin="16dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:orientation="horizontal"
