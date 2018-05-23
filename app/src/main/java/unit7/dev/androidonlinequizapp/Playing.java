@@ -18,8 +18,8 @@ import unit7.dev.androidonlinequizapp.Common.Common;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener{
 
-    final static long INTERVAL = 1000; // 1 segundo
-    final static long TIMEOUT = 7000; // 7 segundos
+    final static long INTERVAL = 2000; // 2 segundo
+    final static long TIMEOUT = 10000; // 10 segundos
     int progressValue = 0;
 
     CountDownTimer mCountDown;
